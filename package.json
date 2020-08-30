@@ -1,20 +1,24 @@
 {
-  "name": "typescript-for-javascript-developers",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kimuniiii/typescript-for-javascript-developers.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kimuniiii/typescript-for-javascript-developers/issues"
-  },
-  "homepage": "https://github.com/kimuniiii/typescript-for-javascript-developers#readme"
+	"name": "typescript-for-javascript-developers",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kimuniiii/typescript-for-javascript-developers.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/kimuniiii/typescript-for-javascript-developers/issues"
+	},
+	"homepage": "https://github.com/kimuniiii/typescript-for-javascript-developers#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"typescript": "^3.7.5"
+	}
 }

@@ -1,2 +1,2 @@
-const message : string = 'ts-node';
+const message: string = 'ts-node';
 console.log({ message });

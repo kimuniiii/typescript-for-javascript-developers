@@ -10,6 +10,10 @@ export {};
 
 // 関数の返り値の型がnever型となるのは？
 // 関数が値を返す可能性がないとき
+// そもそも関数が正常に終了して値が返ってくることがありえない場合
+
+// どんな値も「never型の変数」に入れることは出来ない
+// const n : never = 0;
 
 function error(message : string) : never {
   throw new Error(message);

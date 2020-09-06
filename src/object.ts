@@ -1,5 +1,17 @@
 export {};
 
+// TypeScript独自の（JavaScriptには存在しない）構文
+// オブジェクト型に名前を付けることが出来る
+interface MyObj {
+  foo : string;
+  bar : number;
+}
+
+const a : MyObj = {
+  foo : 'foo',
+  bar : 3,
+}
+
 // objectで「型注釈」
 let profile1 : object = { name : "Kimura"};
 profile1 = { age : 25}

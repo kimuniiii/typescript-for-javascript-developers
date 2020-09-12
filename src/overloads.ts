@@ -16,6 +16,13 @@ export {};
 function double(value : number) : number;
 function double(value : string) : string
 
+/**
+ * @概要 オーバーロード
+ * @説明 引数がnumber型なら2倍・引数がstring型なら結合させる関数
+ * @param {*} value numberとstring
+ * @returns {number} 2倍 {string} 結合
+ */
+
 function double(value : any) : any {
   console.log(typeof value);
 

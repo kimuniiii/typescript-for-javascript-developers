@@ -9,5 +9,5 @@ export {};
 // これは型推論で表示されるものではない（表示されるのは「union型」）
 // したがってプログラマーが型定義を主体的に書く必要がある
 
-let profile : [string,number]= ["Kazuki",25];
+let profile : [ string, number ] = [ "Kazuki", 25 ];
 console.log(profile);

@@ -1,4 +1,4 @@
-// 外部モジュール
+// 外部ライブラリからのimport
 import axios from 'axios';
 
 export {};

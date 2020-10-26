@@ -1,7 +1,7 @@
-export { };
+export {};
 
 // void型の変数にundefinedを入れることはできる
-const a : void = undefined;
+const a: void = undefined;
 
 // undefined型の変数にvoid型の値を入れることはできない
 // const b : undefined = a;
@@ -31,7 +31,7 @@ function returnNothing(): void {
   console.log("I don't return anything");
 }
 
-console.log(returnNothing())
+console.log(returnNothing());
 
 //! ===================
 //! undefined型を返す関数

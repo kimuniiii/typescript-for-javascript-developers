@@ -21,26 +21,29 @@ const kansu = (): number => {
   return 43;
 };
 
+// any・unknown共にどんな型の値も代入できる
 let numberAny: any = kansu();
 let numberUnknown: unknown = kansu();
 
+// any型の値は好きなように扱うことができる
 let sumAny = numberAny + 10;
 
-// 数値の足し算はできない
+// unknown型ではできることが制限されている
+// 以下のコードのように、数値の足し算を行うことはできない
 // let sumUnknown = numberUnknown + 10;
 
-//! ============
+//! =========
 //! typeof型
-//! ============
+//! =========
 
 // typeof型
 //「typeof 変数」と書くと「その変数の型を表す文字列」が得られる
 
 console.log(typeof numberUnknown); // return {number}
 
-//! =============
+//! ===========
 //! タイプガード
-//! =============
+//! ===========
 
 //? typeofなどを使ってある特定の型であることを確認しながらコードを安全に実行させる仕組みを何と呼ぶ？
 //? タイプガード（型ガード）

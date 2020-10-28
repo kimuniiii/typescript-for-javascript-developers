@@ -1,7 +1,15 @@
 export {};
 
+//! ======
+//! enum型
+//! ======
+
+//? enum型とは？
+// 関連する値の集合を編成する方法
+
+// 何も指定しない場合は0から数字が割り振られていく
 enum Months {
-  January = 1,
+  January,
   February,
   March,
   April,
@@ -12,7 +20,7 @@ enum Months {
   September,
   October,
   November,
-  December
+  December,
 }
 
 console.log(Months.January);
@@ -22,12 +30,13 @@ console.log(Months.December);
 // これと同じコードをJavaScriptで書こうとしたらどうなる？
 
 const MonthsJs = {
-  January : 0,
-  February : 1,
-}
+  January: 0,
+  February: 1,
+};
 
 console.log(MonthsJs.January);
 
+// 任意の数字や文字列を割り当てることができる
 enum Colors {
   RED = '#FF0000',
   BLUE = '#0000FF',
@@ -37,7 +46,7 @@ enum Colors {
 }
 
 let green = Colors.GREEN;
-console.log({green});
+console.log({ green });
 
 enum Colors {
   YELLOW = '#FFFF00',
@@ -45,4 +54,4 @@ enum Colors {
 }
 
 let yellow = Colors.YELLOW;
-console.log(yellow);
+console.log({ yellow: yellow });

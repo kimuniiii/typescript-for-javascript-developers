@@ -4,7 +4,7 @@ export {};
 //「引数・戻り値」に型を付ける
 
 /**
- * 肥満度を表す体格指数であるBMIを求める関数
+ * 肥満度を表す体格指数であるBMIを求める関数宣言文
  *
  * @param {number} height
  * @param {number} weight

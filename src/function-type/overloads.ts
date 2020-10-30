@@ -13,8 +13,8 @@ export {};
 // シグネチャで「型制約」を行う
 
 //! シグネチャ（引数と返り値の「型」だけを定義）
-function double(value : number) : number;
-function double(value : string) : string
+function double(value: number): number;
+function double(value: string): string;
 
 /**
  * @概要 オーバーロード
@@ -23,17 +23,20 @@ function double(value : string) : string
  * @returns {number} 2倍 {string} 結合
  */
 
-function double(value : any) : any {
+type union = string | number;
+
+function double(value: union): union | void {
   console.log(typeof value);
 
+  // 型ガードを使用して条件ブロック内の型を制限
   if (typeof value === 'number') {
     return value * 2;
   }
 
+  // 型ガードを使用して条件ブロック内の型を制限
   if (typeof value === 'string') {
-    return `${value} ${value};`
+    return `${value} ${value};`;
   }
-
 }
 
 console.log(double(100));

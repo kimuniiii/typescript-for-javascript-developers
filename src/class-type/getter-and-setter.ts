@@ -31,7 +31,9 @@ export {};
 //? 要件を満たすためのソースコード
 
 class MyNumberCard {
-  constructor(private _owner : string, private _secretNumber: number) {}
+  // 外から直接読み書きして欲しくないプロパティを「_（アンダーバー）」で開始する
+  // JavaScript Primerには「慣習」と書いてあるがTypeScriptでは「エラー」になる
+  constructor(private _owner: string, private _secretNumber: number) {}
 
   // 参照することが専用のメソッド（ゲッター）
   get owner() {
@@ -40,7 +42,7 @@ class MyNumberCard {
   }
 
   // 設定することが専用のメソッド（セッター）
-  set secretNumber(secretNumber:  number) {
+  set secretNumber(secretNumber: number) {
     this._secretNumber = secretNumber;
   }
 
@@ -49,7 +51,7 @@ class MyNumberCard {
   }
 }
 
-let card = new MyNumberCard("木村",123456789)
+let card = new MyNumberCard('カズキ', 123456789);
 
 console.log(card.owner);
 console.log(card.debugPrint());

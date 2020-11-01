@@ -12,18 +12,17 @@ export {};
 // 外部からのアクセスはダメ。内部からのアクセスはOK。
 
 //? protected
-// 親クラスを継承した子クラスからはアクセス可能。
+// 外部からのアクセスはダメ。内部からのアクセスはOK。親クラスを継承した子クラスからもアクセスOK。
 
 class Person {
-  public name: string;
+  protected name: string;
   protected age: number;
-  public nationality : string;
+  public nationality: string;
 
   //? TypeScriptの言語仕様
   // コンストラクタの戻り値に該当する型は書かない
 
   constructor(name: string, age: number, nationality: string) {
-
     // コンストラクタ関数の処理
     // インスタンス化されると自動的に呼び出される
 
@@ -38,8 +37,8 @@ class Person {
 }
 
 class Android extends Person {
-  constructor(name:string,age:number,nationality:string) {
-    super(name,age,nationality);
+  constructor(name: string, age: number, nationality: string) {
+    super(name, age, nationality); // 親クラスのコンストラクタを呼び出している
   }
 
   profile(): string {
@@ -47,10 +46,10 @@ class Android extends Person {
   }
 }
 
-let taro = new Person('太郎',33,"日本");
-let taro2 = new Android("太郎",34,"イタリア");
+let taro = new Person('太郎', 33, '日本');
+let taro2 = new Android('太郎', 34, 'イタリア');
+
 console.log(taro.profile());
 console.log(taro2.profile());
-console.log(taro.name);
-
+// console.log(taro.name);
 // console.log(taro.age);

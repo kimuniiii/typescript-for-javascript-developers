@@ -17,8 +17,7 @@ let barCompatible: string = 'TypeScript';
 console.log(typeof fooCompatible);
 
 //? これは代入できる？
-// 型の互換性がある
-fooCompatible = barCompatible;
+// fooCompatible = barCompatible;
 
 console.log(typeof fooCompatible);
 
@@ -26,14 +25,12 @@ let fooInCompatible: string;
 let barIncompatible: number = 1;
 
 //? これは代入できる？
-// 型の互換性がない
 // fooInCompatible = barIncompatible;
 
 let fooString: string;
 let barString: string = 'string';
 
 //? これは代入できる？
-// 代入できる
 fooString = barString;
 
 let fooStringLiteral: 'fooStringLiteral' = 'fooStringLiteral';
@@ -43,15 +40,14 @@ let fooNumber: number;
 let fooNumberLiteral: 1976 = 1976;
 
 //? これは代入できる？
-// 代入できる
 fooNumber = fooNumberLiteral;
 
 //! オブジェクトの型の互換性
 // 構造的部分型が適用されている
 
 interface Animal {
-  age : number;
-  name : string;
+  age: number;
+  name: string;
 }
 
 class Person {
@@ -59,4 +55,4 @@ class Person {
 }
 
 let me: Animal;
-me = new Person(43,'きむら');
+me = new Person(43, 'きむら');

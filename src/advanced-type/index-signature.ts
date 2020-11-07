@@ -15,12 +15,12 @@ export {};
 
 // 型が冗長だと思ったら「interface」にまとめる
 interface Profile {
-  underTwenty : boolean;
-  [index : string] : string | number | boolean;
+  underTwenty: boolean;
+  [index: string]: string | number | boolean;
 }
 
-let profile : Profile = { underTwenty : false };
+let profile: Profile = { underTwenty: false };
 
 profile.name = 'Ham';
 profile.age = 43;
-profile.nationality = 'Japan'
+profile.nationality = 'Japan';

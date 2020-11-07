@@ -6,6 +6,7 @@ export {};
 
 // 型というのは「制約」を付ければ付けるほど「安全」になる
 // 型というのは「制約」を付ければ付けるほど「安全」になる
+// 型というのは「制約」を付ければ付けるほど「安全」になる
 
 //? 定義
 // 推論された型や、既に定義済みの変数の型を上書きする
@@ -19,13 +20,25 @@ export {};
 //? <型>とasでの型アサーションはどちらが推奨されている？
 // asが推奨されている。なぜならJSXとの区別が付かなくなるから
 
-let foo : any;
-const str = <string> foo;
+//? <型>での型アサーション
 
-let foo1 : any;
-const str1= foo as string
+let foo: any;
+const testStr = <string>foo;
 
-let name : any = 'Ham';
-let length = (<string>name).length;
+//? asでの型アサーション
 
-// length = 'foo';
+let foo1: any;
+const testStr1 = foo as string;
+
+//?「as any」によって無理やりコンパイルエラーを免れる方法
+
+const str = 'kazuki';
+
+let nub = 25;
+nub = str as any;
+
+//? 一度「any」を通して型アサーションするとどんな型にも変換可能
+
+let name: any = 'Ham';
+let length = (name as string).length;
+console.log({ length });

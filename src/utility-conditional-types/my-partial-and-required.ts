@@ -11,10 +11,10 @@ export {};
 // Tの全てのプロパティを「必須のプロパティ」にする機能
 
 type Profile = {
-  name?: string;
-  age?: number;
-  zipCode?: number;
-}
+  name: string;
+  age: number;
+  zipCode: number;
+};
 
-type PartialType = Partial<Profile>
-type RequiredType = Required<Profile>
+type PartialType = Partial<Profile>;
+type RequiredType = Required<Profile>;

@@ -1,35 +1,83 @@
 export {};
 
-// 構造的部分型
+//! =================
+//! 関数のジェネリックス
+//! =================
 
-// 構造が同じとは？
-// オブジェクトが持っているプロパティが互換している、という意味
-// 必要なプロパティを全て所持している = 型の互換性がある
-// 型の互換性がある = ある型Aにある型Bを代入できる、という意味
+// const generics = (args : number) : number => {
+//   return args
+// }
 
-interface A {
-  name: string;
-  age: number;
+// const generics = (args : string) : string => {
+//   retrun args;
+// }
+
+const generics = <T>(args: T): T => {
+  return args;
+};
+
+console.log(generics(43));
+console.log(generics('木村'));
+console.log(generics(true));
+
+//! =================
+//! クラスのジェネリクス
+//! =================
+
+// class Generics {
+//   public args: string;
+
+//   constructor(args: string) {
+//     this.args = args;
+//   }
+
+//   echo(): string {
+//     return this.args;
+//   }
+// }
+
+// console.log(new Generics('kazuki').echo());
+
+class Generics {
+  public args: number;
+
+  constructor(args: number) {
+    this.args = args;
+  }
+  echo(): number {
+    return this.args;
+  }
 }
 
-const obj1 = { name: 'kazuki' };
-const obj2 = { name: 'kazuki', age: 25 };
-const obj3 = { name: 'kazuki', age: 25, hobby: '読書' };
+console.log(new Generics(123).echo());
 
-// これは「構造的部分型」ではない
-// なぜなら必要なプロパティを全て所持していないから
-// 必要なプロパティを全て所持していない
-// オブジェクトが持っているプロパティが互換していない
-// 構造が同じではない
-// 構造的部分型によってコンパイルエラー
-const testObj: A = obj1;
+// class Generics<T> {
+//   public args: T;
 
-// これは「構造的部分型」である
-// なぜなら必要なプロパティを全て所持しているから
-// したがってコンパイルエラーにならない
-const testObj2: A = obj2;
+//   constructor(args: T) {
+//     this.args = args;
+//   }
 
-// これは「構造的部分型」である
-// なぜなら必要なプロパティを全て所持しているから
-// したがってコンパイルエラーにならない
-const testObj3: A = obj3;
+//   echo(): T {
+//     return this.args;
+//   }
+// }
+
+// console.log(new Generics<number>(123).echo());
+
+//! ======================
+//! Widening Literal Types
+//! ======================
+
+const widening = 'hoge';
+
+const test = { widening: widening };
+
+test.widening = 'str';
+console.log(test.widening);
+
+// const nonWideningLiteral = 'kkk' as const;
+const nonWideningLiteral: 'kkk' = 'kkk';
+
+const obj = { nonWideningLiteral };
+obj.nonWideningLiteral = 'str';

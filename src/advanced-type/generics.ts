@@ -14,11 +14,11 @@ export {};
 // 引数と戻り値の「型」が異なるだけで「やっている処理」は同じ関数
 
 // const echo = (arg: number) : number => {
-  // return arg;
+// return arg;
 // }
 //
 // const echo = (arg: string) : string => {
-  // return arg;
+// return arg;
 // }
 
 //? なんとかしてこれら2つを共通化出来ないか？
@@ -34,7 +34,7 @@ export {};
 
 const echo = <T>(arg: T): T => {
   return arg;
-}
+};
 
 console.log(echo<number>(23));
 console.log(echo<string>('type'));
@@ -47,11 +47,11 @@ console.log(echo<boolean>(true));
  * @template T
  */
 
-class Mirror <T> {
+class Mirror<T> {
   constructor(public value: T) {}
 
   echo(): T {
-    return this.value
+    return this.value;
   }
 }
 

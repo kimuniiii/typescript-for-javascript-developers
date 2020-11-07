@@ -37,16 +37,16 @@ class Animal {
  */
 
 class Lion extends Animal {
-  public speed : number;
+  public speed: number;
 
-  constructor(name: string, speed : number) {
+  constructor(name: string, speed: number) {
     super(name); // super() = 親クラスのコンストラクタを実行している
     this.speed = speed; // 子クラス独自の処理を実行している
   }
 
   run(): string {
     const parentMessage = super.run(); // super.run() = 親クラスのrunメソッドを実行している
-    console.log({parentMessage}); // 省略記法
+    console.log({ parentMessage }); // 省略記法
     return `${super.run()} ${this.speed}km.`;
   }
 }

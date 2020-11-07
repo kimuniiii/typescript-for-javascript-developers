@@ -19,10 +19,10 @@ export {};
 //? UnNullableな状態でnullを代入できるようにするには？
 // 共用体（union）型を明示的に指定してあげればいい
 
-let profile: { name : string, age : number } = {
-  name : 'Ham',
-  age : null,
-}
+let profile: { name: string; age: number | null } = {
+  name: 'Ham',
+  age: null,
+};
 
 profile.name = 'Ham';
 profile.age = 43;

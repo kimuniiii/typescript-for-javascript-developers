@@ -12,22 +12,22 @@ export {};
 const widening = 'String';
 
 const test = {
-  widening : widening
-}
+  widening: widening,
+};
 
 //? 出力結果はどうなる？
 console.log(test.widening);
 
 //! NonWidening Literal Types
 
-const nonWidening = 'Hoge' as const
+const nonWidening = 'Hoge' as const;
 
 //? 上記構文は以下の構文と同じ意味
 // const nonWidening: 'Hoge' = 'Hoge'
 
 const test2 = {
-  nonWidening : nonWidening
-}
+  nonWidening: nonWidening,
+};
 
 //? 出力結果はどうなる？
 console.log(test2.nonWidening);
@@ -36,13 +36,9 @@ console.log(test2.nonWidening);
 // {} as const と書く（読み取り専用になるから）
 
 let obj = {
-  name : 'String',
-  age : 24
-} as const
+  name: 'String',
+  age: 24,
+} as const;
 
 // obj.name = 'Hoge';
 // obj.age = 35;
-
-
-
-

@@ -11,7 +11,8 @@ export {};
 // 複数のインターフェイスを継承して新しいインターフェイスを作れる
 
 //? 抽象クラスとインターフェイスの共通点は？
-// 具体的な処理内容を記述しない = メソッドや変数に型だけを記述
+// 具体的な処理内容を記述しない
+// メソッドや変数に型だけを記述
 
 //? 抽象クラスとインターフェイスの相違点は？
 // 多重継承が出来るかどうか
@@ -25,13 +26,12 @@ class Taro extends Mahotsukai {}
 
 //! インターフェイス
 interface Kenja {
-  ionazun() : void;
+  ionazun(): void;
 }
 
 interface Senshi {
-  kougeki() : void;
+  kougeki(): void;
 }
-
 
 /**
  * @概要 複数のインターフェイスの実装
@@ -42,11 +42,11 @@ interface Senshi {
  */
 
 class Jiro implements Kenja, Senshi {
-  ionazun() : void {
+  ionazun(): void {
     console.log('ionazun');
   }
 
-  kougeki() : void {
+  kougeki(): void {
     console.log('kougeki');
   }
 }

@@ -14,12 +14,32 @@ export {};
 // 大事なことは「あるオブジェクトのプロパティの名前から型を作ってそれを1つずつ取り出している」ことを理解できること
 
 type Profile = {
-  name : string;
-  age : number;
-}
+  name: string;
+  age: number;
+};
 
+//! =========
+//! Partial型
+//! =========
+
+type Partial<T> = { [P in keyof T]?: T[P] };
 type PartialProfile = Partial<Profile>;
-type PropertyTypes = keyof Profile;
 
-type Optional<T> = { [P in keyof T]?: T[P] | null};
+type Optional<T> = { [P in keyof T]?: T[P] | null };
 type OptionalProfile = Optional<Profile>;
+
+//! ==========
+//! Required型
+//! ==========
+
+type Required<T> = { -readonly [P in keyof T]: T[P] };
+type Obj = Required<Profile>;
+
+//! ===========
+//! Readonly型
+//! ===========
+
+type Readonly<T> = { readonly [P in keyof T]: T[P] };
+type obj2 = Readonly<Profile>;
+
+type PropertyTypes = keyof Profile;

@@ -15,14 +15,29 @@ export {};
 // Tからnullとundefinedを取り除いた型を構築する
 
 type DebugType = () => void;
-type SomeTypes = string | number | DebugType;
+type SomeTypes = string | number | boolean | DebugType;
 
-type FunctionType = Exclude<SomeTypes, string | number>
-type NonFunctionType = Exclude<SomeTypes,DebugType>
-type TypeExcludingFunction = Exclude<SomeTypes,Function> // 関数型の総称を除外したかったらこれ
+// Exclude<T,U>
+type BooleanDebugType = UserExclude<SomeTypes, string | number>;
+type NonBooleanType = Exclude<SomeTypes, boolean>;
+type TypeExcludingFunction = Exclude<SomeTypes, Function>; // 関数型の総称を除外したかったらこれ
 
-type ExtractTypes = Extract<SomeTypes,string>
-type DebugTypes = Extract<SomeTypes,DebugType>
-type FunctionTypes = Extract<SomeTypes,Function> // 関数型の総称を除外したかったらこれ
+// Extract<T,U>
+type ExtractTypes = Extract<SomeTypes, string>;
+type DebugTypes = Extract<SomeTypes, DebugType>;
+type FunctionTypes = Extract<SomeTypes, Function>; // 関数型の総称を除外したかったらこれ
 
-type NonNullableTypes = NonNullable<null | undefined | string>
+// NonNullable<T>
+type NonNullableTypes = NonNullable<null | undefined | string>;
+
+// Exclude<T,U>を自作する
+
+type UserExclude<T, U> = T extends U ? never : T;
+
+// Extract<T,U>を自作する
+
+type UserExtract<T, U> = T extends U ? T : never;
+
+// NonNullable<T>を自作する
+
+type UserNonNullable<T> = T extends null | undefined ? never : T;
